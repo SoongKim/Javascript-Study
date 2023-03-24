@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>로그인 페이지 입니다.</title>
+  </head>
+  <body>
+    Javascript
+    <input type="text" name="" id = "username" value="">
+    <br>
+    <input type="password" id="alertText" value = "">
+    <input type="button" id="alertBtn" value = "버튼">
+  </body>
+
+  <script>
+    // for( alert(1); part2(2); alert(4)){
+    //   console.log('3-1');
+    //   console.log('3-2');
+    //   console.log('3-3');
+    //   console.log('3-4');
+    // }
+    //
+    // function part2(){
+    //   console.log('2-1');
+    //   console.log('2-2');
+    //   console.log('2-3');
+    //   console.log('2-4');
+    //   return true;
+    // }
+
+    // for(let i=10; i<10000; i=i*10) {
+    //   console.log(i);
+    // }
+    let j = 3;
+    let k = 1;
+
+    for(let i = 10; j < 1000; k = i * 10){
+      j = j*2;
+      console.log(i, j, k)
+    }
+
+    // console.log(document.getElementById("alertBtn"));
+    // document.getElementById("alertBtn").addEventListner('click', function(){
+    //   alert(1);
+    // });
+    document.getElementById("alertBtn").addEventListener('click', function(){
+      console.log("ID: " + document.getElementById("username").value)
+    });
+
+    document.getElementById("alertBtn").addEventListener('click', function(){
+      console.log("PWD:" + document.getElementById("alertText").value)
+    });
+    document.getElementById("alertBtn").addEventListener('click', function(){
+      alert("Welcome!");
+    });
+
+    // for(let i = 0; i < 10; i++){
+    //   console.log(i);
+    // }
+    // for( alert(1); !alert(2); alert(3)){
+    //   alert(3)
+    // }
+
+    // for(alert(1); part2(2); alert(4)){
+    //   console.log('3-1');
+    //   console.log('3-2');
+    //   console.log('3-3');
+    //   console.log('3-4');
+    // }
+    //
+    // function part2(){
+    //   console.log('2-1');
+    //   console.log('2-2');
+    //   console.log('2-3');
+    //   console.log('2-4');
+    // }
+    //for(식1; !식2; 식4;){
+    //식3
+    //}
+
+    //컴퓨터의 생각
+    // for 문을 만났다?
+    // 식 1 한 번 시행하고
+    // 그 다음에
+    //식2, 식3, 식4를 무한으로 반복하자!
+    // 언제까지? 식2 결과값이 false 일 때까지
+    //컴퓨터의 생각
+
+    //ex. 1==1 를 식2 자리에 입력한다면 무한 궤도 완성.
+
+    // console.log("client console ready for duty");
+    // alert("잡았다 요놈!");
+    // for(let i = 0; i < 5; i++){
+    //   console.log(i);
+    // }
+    // a = "string test";
+    // console.log(a)
+  </script>
+</html>
