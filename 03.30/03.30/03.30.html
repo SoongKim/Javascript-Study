@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="num01" value="" id = "num01">
+    <input type="text" name="num02" value="" id = "num02">
+    <input type="button" name="calBtn" value = "결과" id = "calBtn">
+  </body>
+  <script>
+    document.getElementById('calBtn').addEventListener('click', function(){
+      let num01 = Number(document.getElementById("num01").value);
+      let num02 = Number(document.getElementById("num02").value);
+      let num03 = num01 + num02;
+      console.log(num03)
+      if(num03 >= 10){
+        console.log("10 이상")
+        alert("10 이상입니다.")
+      }
+      else if(num03 < 10){
+        console.log("10 이하")
+        alert("10 이하입니다.")
+      }
+      else{
+        console.log("문자열 입력");
+        alert("숫자를 입력하세요.")
+      }
+    });
+  </script>
+</html>

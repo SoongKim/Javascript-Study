@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="inputText01">
+    <input type="text" id="inputText02">
+    <br>
+    <input type="button" value="결과" id="consoleBtn">
+  </body>
+  <script>
+    document.getElementById('consoleBtn').addEventListener('click', function(){
+      let num1 = Number(document.getElementById('inputText01').value);
+      let num2 = Number(document.getElementById('inputText02').value);
+      let num3 = num1 + num2;
+      console.log(num3);
+      if(num3 >= 10){
+        console.log("10 이상");
+      }
+      else{
+        console.log("10 미만");
+      }
+    });
+  </script>
+</html>

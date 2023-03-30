@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    // var human1 = {}, human2 = {}, human3 = {}, human4;
+    // human1.ages = 20;
+    // human1.height = "180cm";
+    // human1.name = "John";
+    // console.log(human1);
+    //
+    // human2.ages = 30;
+    // human2.height = "160cm";
+    // human2.name = "Jane";
+    // console.log(human2);
+    //
+    // human3.ages = 25;
+    // human3.height = "170cm";
+    // human3.name = "Jack";
+    // console.log(human3);
+
+    // if(1+1){
+    //   console.log("if");
+    // }
+
+    // var i = 1;
+    // for(var i = 1; i < 10; i++){
+    //   console.log(i);
+    //   document.write(i + " ");
+    // }
+    //
+    // for(let i=1244 ; i >-100 ; i = i-100){
+    //   console.log(i);
+    // }
+    // console.log(50%7);
+    // console.log(1>5);
+
+    // for(1; 2; 4){
+    //         3
+    // }
+    // 1 한 번 실행하고
+    // 2, 3, 4 무한반복
+    // 2가 false가 될 때까지
+
+    // false, undefined, null, 0이 아니면
+    // 0 = false, 1 = true
+
+
+    // if(true || true){
+    //   console.log("true || true");
+    // }
+    //
+    // if(true || false){
+    //   console.log("true || false");
+    // }
+    //
+    // if(false || true){
+    //   console.log("false || true");
+    // }
+    //
+    // if(false || false){
+    //   console.log("false || false");
+    // }
+
+    // for문을 사용하여 홀수만 출력하기
+    // for(let i = 1 ; i<101 ; i++){
+    //   if(i % 2 == 1){
+    //     console.log(i);
+    //   }
+    // }
+    //
+    // for(let j = 1; j < 101; j +=2){
+    //   console.log(j)
+    // }
+
+    // for(let i = 50 ; i > 0 ; i--){
+    //   console.log(100-(i*2-1));
+    // }
+
+    // 1~10의 랜덤값을 만들어보자
+    // console.log(Math.random());
+    // : 0 ~ 0.999999999...... 의 난수가 생성된다.
+    // 그럼 여기에 10을 곱하면? 0~9.9999...... 의 난수가 생성된다.
+    // 그럼 여기에서 소수점 아래를 버리면?
+    // console.log(Math.floor(Math.random()*10));
+    // : 0~ 9 사이의 난수를 생성할 수 있다.
+    // 그럼 여기에 1을 더해주면?
+
+    // for(let i = 0; i < 10; i++){
+    // console.log(Math.floor(Math.random()*10 + 1));
+    // }
+    // : 1에서 10 사이의 난수를 생성할 수 있다.
+
+    // function funcName(param1, param2){
+      // console.log("Hello " + param1 + ", " + param2 + "1");
+      // console.log("Hello " + param1 + ", " + param2 + "2");
+      // console.log("Hello " + param1 + ", " + param2 + "3");
+      // console.log("Hello " + param1 + ", " + param2 + "4");
+      // console.log("Hello " + param1 + ", " + param2 + "5");
+      // return param1 + " " + param2;
+    }
+
+    // 함수의 구조
+    // function(함수 선언) funcName(함수의 이름) (변수 1, 변수 2, ....){
+    // 해당 함수 호출 시 수행할 기능
+    // }
+
+    // 함수 호출 간
+    // funcName(함수 이름)(변수 1, 변수 2, ...):
+    // 함수 내용에 담긴 작업을 변수를 적용하여 수행한다.
+    // funcName("cat", "dog");
+    // funcName("banana", "apple");
+    // funcName("기아", "현대");
+
+    // console.log(  (1+1) );
+    // console.log(  funcName("기아", "현대")  );
+    // 함수는 죽어서 리턴 값을 남긴다...
+
+    // console.log(1);
+    // console.log(1*2);
+    // console.log(1*2*3);
+    // ...
+    // =
+    // Method 01
+
+    function fact(num1){
+      let result = 1;
+      for(let i = 1; i <=3; i++){
+        result = result*i;
+      }
+      console.log(result);
+    }
+
+// ----------------------------------------------------
+  // Method 02
+
+    function fact2(num1){
+      let result = 1;
+      for(let i = 1; i <=3; i++){
+        result = result*i;
+      }
+      return result;
+    }
+    for(let i=1; i<=10; i++){
+      console.log(fact(i));
+    }
+  </script>
+</html>
