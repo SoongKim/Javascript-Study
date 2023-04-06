@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>localhost/login</title>
+  </head>
+  <body>
+    ID:
+    <input type="text" name="idVal" value="" id = "ids">
+    PASSWORD:
+    <input type="password" name="idVal" value="" id = "pws">
+    <input type="button" name="button" value="로그인" id = "loginBtn">
+  </body>
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', function(){
+    let idVal = String(document.getElementById('ids').value);
+    let pwVal = String(document.getElementById('pws').value);
+    // 숫자값은 String으로 잡아도, Number로 잡아도 둘 다 인식한다.
+    // 반장의 조언. 어지간하면 Number타입으로 잡지 말고, 무조건 String으로 잡아라.
+      if(idVal == 'polytech' && pwVal == '12341234'){
+          alert('로그인 성공');
+          console.log('로그인 성공');
+      }
+      else{
+          alert('로그인 실패');
+          console.log('로그인 실패');
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="" value="" id = "mainValue">
+    <input type="button" name="" value="구구단" id = "nine">
+    <br>
+    <div id = "1"></div>
+    <div id = "2"></div>
+    <div id = "3"></div>
+    <div id = "4"></div>
+    <div id = "5"></div>
+    <div id = "6"></div>
+    <div id = "7"></div>
+    <div id = "8"></div>
+    <div id = "9"></div>
+
+  </body>
+  <script>
+    document.getElementById('nine').addEventListener('click', function(){
+      let MainNumber = String(document.getElementById('mainValue').value);
+      for(let i = 1; i <=9; i++){
+      document.getElementById(i).innerHTML = MainNumber+"X"+i+"="+i*MainNumber;
+      console.log(MainNumber+"X"+i+"="+i*MainNumber);
+      }
+})
+  </script>
+</html>

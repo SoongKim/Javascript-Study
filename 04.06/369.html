@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "369"></div>
+  </body>
+  <script>
+    for(var i = 1; i<=100; i++){
+      var str = ""+i;
+      for(var e = 0; e < str.length; e++){
+        if(str[e] == 3 || str[e] == 6 || str[e] == 9){
+          str = "짝";
+        }
+      }
+      document.getElementById("369").innerHTML += `${str}<br>`;
+      // for(var j = 0; j < str.length; j++){
+      //   if(str[j] == 3 || str[j] == 6 || str[j] == 9){
+      //     str = "";
+      // if(str == "짝"){
+      //     document.getElementById("369").innerHTML += `짝<br>`;
+        }
+        // }
+
+    //
+    // for(let j = 1; j <= i.length; j++){
+    //   if(i[j] == 3 || i[j] == 6 || i[j] == 9){
+    //     document.getElementById("369").innerHTML += `"짝"<br>`;
+    //   }
+    // }
+
+      //3, 6, 9 : 연산 나머지가 3, 6, 9일 때 박수를 치면 된다.
+      // i < 10일 때는 자신이 나머지가 되며,
+      // i >= 10일 때는 i의 뒷자리가 출력된다.
+      // 그러니 i%10이 3, 6, 9일 때를 대상으로 하면
+      // 우리가 아는 3, 6, 9가 해당된 숫자에 박수를 치는 로직을 만들 수 있다.
+  </script>
+</html>
