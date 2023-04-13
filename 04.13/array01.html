@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "reference"></div>
+  </body>
+  <script>
+    let num = 5;
+    let array = Array(num);
+    for(let i = 0; i < array.length; i++){
+      array[i] = new Array(5);
+      for(let j = 0; j < array[i].length; j++){
+        if(i == 0){
+          array[i][j] = j+1;
+        }
+        else{
+          array[i][j] = array[i-1][array[i].length-1] + (j+1);
+        }
+      }
+    }
+
+    for(let i = 0; i < num; i++){
+      for(let j = 0; j < num; j++){
+        let e = 0;
+        if(array[i][j].length == 1){
+          array[i][j] = array[i][j];
+        }
+      }
+    }
+
+    console.log(array);
+    for(let i = 0; i <5; i++){
+    document.getElementById('reference').innerHTML += `${array[i]}<br>`;
+    }
+      // for(let j = 0; j < 5; j++){
+      //   if(i == 0){
+      //     hula[i][j] = j+1;
+      //   }
+      //   else if(i == 1){
+      //     hula[i][j] = hula[0][j]+hula[0][4];
+      //   }
+      //   else if(i == 2){
+      //     hula[i][j] = hula[1][j]+hula[0][4];
+      //   }
+      //   else if(i == 3){
+      //     hula[i][j] = hula[2][j] + hula[0][4];
+      //   }
+      //   else if(i == 4){
+      //     hula[i][j] = hula[3][j]+ hula[0][4];
+      //   }
+      // }
+
+
+
+  </script>
+
+</html>

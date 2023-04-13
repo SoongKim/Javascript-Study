@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <center><div id = "369"></div></center>
+  </body>
+  <script>
+  for(var i = 1; i<=100; i++){
+    i = ""+i;
+    // 3, 6, 9를 포함하지 않을 시 출력할 데이터
+    let isContainingThreeSixNine = false;
+    // Boolean type을 사용하여 효율적으로 코드를 작성하였다.
+    // 정수, 실수, 문자열만 가지고 놀지 말고, 사고의 폭을 넓히자.
+    let jjakString = "";
+    //3, 6, 9를 포함할 시 출력 대상으로 사용할 데이터
+
+    // 문자열은 인덱스 번호로 각 Char 별 확인이 가능하다.
+    // 유용하게 사용할 수 있다.
+
+    for(var e = 0; e < i.length; e++){
+      if(i[e]%3==0 && i[e]!=0){
+        // i[e] : 문자열 i의 e번 인덱스에 해당하는 캐릭터. 개별 확인 가능.
+
+        // MOD 연산이면 i[e] == 3 || i[e] == 6 || i[e] == 9
+        // 같은 빡통 짓을 갈음할 수 있다. 조금만 더 생각해보자.
+        isContainingThreeSixNine = true;
+        jjakString +="짝";
+        // 연산자 +=가 항상 발목을 잡는다.
+        //유용하게 사용할 수 있는 친구이니, 친해지도록 노력하자.
+      }
+    }
+
+    if(isContainingThreeSixNine){
+      document.getElementById("369").innerHTML += `${jjakString}<br>`;
+      console.log(jjakString)
+    }
+    else{
+      document.getElementById("369").innerHTML += `${i}<br>`;
+      console.log(i);
+    }
+  }
+  </script>
+</html>

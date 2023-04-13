@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "reference"></div>
+  </body>
+  <script>
+    let num = 5;
+    let arr = new Array(num);
+    for(let i = 0; i < arr.length; i++){
+      arr[i] = new Array(num);
+      for(let j = 0; j < arr[i].length; j++){
+        if(i == 0){
+          arr[i][j] = 0;
+        }
+        else{
+          arr[i][j] = i*j;
+        }
+      }
+    }
+    console.log(arr);
+    for(let i = 0; i <5; i++){
+    document.getElementById('reference').innerHTML += `${arr[i]}<br>`;
+    }
+
+  </script>
+</html>

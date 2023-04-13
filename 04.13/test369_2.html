@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "369"></div>
+  </body>
+  <script>
+    for(var i = 1; i<=100; i++){
+      var str = ""+i;
+      let isContainingThreeSixNine = false;
+      let jjakString = "";
+      for(var e = 0; e < str.length; e++){
+        if(str[e] == 3 || str[e] == 6 || str[e] == 9){
+          let isContainingThreeSixNine = true;
+          jjakString += "짝";
+        }
+      }
+      if(isContainingThreeSixNine == true){
+        document.getElementById().innerHTML += `${jjakString}<br>`;
+      }
+      else if(isContainingThreeSixNine == false){
+        document.getElementById("369").innerHTML += `${str}<br>`;
+      }
+    }
+
+</script>
+</html>
