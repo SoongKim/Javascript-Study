@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="price">
+    <input type="button" value="확인" id="getCarPriceBtn">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $("#getCarPriceBtn").click(function(){
+      $.ajax({
+      url:`http://localhost/getCarPrice?price=${$("#price").val()}`,
+      data:{},
+      success:function(data){
+        console.log(data);
+      }
+    });
+    });
+  </script>
+</html>

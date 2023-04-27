@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <input type="text" value="" id="num01">
+    <input type="text" value="" id="num02">
+    <input type="text" value="" id="num03">
+    <input type="button" value="곱하기" id="mulBtn">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $('#mulBtn').click(function(){
+    let num1 = Number($("#num01").val());
+    let num2 = Number($("#num02").val());
+    let num3 = Number($("#num03").val());
+    $.ajax({
+      url:`http://localhost/mulCal?num1=${num1}&num2=${num2}&num3=${num3}`,
+      data: {},
+      success:function(data){
+        console.log(data);
+      }
+    });
+  });
+  </script>
+</html>

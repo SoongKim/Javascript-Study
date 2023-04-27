@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    1번 &nbsp 0<input type="radio" name="first" value="0"></input>
+    1<input type="radio" name="first" value="0"></input>
+    2<input type="radio" name="first" value="0"></input>
+    3<input type="radio" name="first" value="0"></input>
+    4<input type="radio" name="first" value="0"></input>
+    가중치 <input type="text" id="wei1" value = ""></input>
+    <br>
+
+    2번 &nbsp 0<input type="radio" name="second" value="0"></input>
+    1<input type="radio" name="second" value="0"></input>
+    2<input type="radio" name="second" value="0"></input>
+    3<input type="radio" name="second" value="0"></input>
+    4<input type="radio" name="second" value="0"></input>
+    가중치 <input type="text" id = "wei2" value = ""></input>
+
+    <br>
+    3번 &nbsp 0<input type="radio" name="third" value="0"></input>
+    1<input type="radio" name="third" value="0"></input>
+    2<input type="radio" name="third" value="0"></input>
+    3<input type="radio" name="third" value="0"></input>
+    4<input type="radio" name="third" value="0"></input>
+    가중치 <input type="text" id = "wei3" value = ""></input>
+    <br>
+    <div id = "place1"></div>
+    <br>
+    <input type="button" name="" value="계산" id="cal"></input>
+  </body>
+  <script>
+    // src="http://code.jquery.com/jquery-latest.min.js">
+
+    let calBtn = document.getElementById("cal");
+    calBtn.addEventListener('click', function(){
+      // $("#cal").click(function(){
+
+      // })
+      let weight1 = Number(document.getElementById('wei1').value);
+      // let weight1 = $(#'wei1').value;
+      let weight2 = Number(document.getElementById('wei2').value);
+      // let weight2 = $(#'wei2').value;
+      let weight3 = Number(document.getElementById('wei3').value);
+      // let weight3 = $(#'wei3').value;
+
+      let radio1 = document.getElementsByName('first');
+      let radio2 = document.getElementsByName('second');
+      let radio3 = document.getElementsByName('third');
+
+      let val1 = 0, val2 = 0, val3 = 0;
+      for(let i = 0; i < 5; i++){
+        if(radio1[i].checked){
+          val1 = i;
+        }
+        if(radio2[i].checked){
+          val2 = i;
+        }
+        if(radio3[i].checked){
+          val3 = i;
+        }
+      }
+            // document.getElementById("place1").innerHTML = `${val1}`+"x"+`${weight1}`+" + "+`${val2}`+"x"+`${weight2}`+" + "+`${val3}`+"x"+`${weight3}`+" = "+`${weight1*val1 + weight2*val2 + weight3*val3}`;
+            document.getElementById("place1").innerHTML = `${val1} x ${weight1} + ${val2} x ${weight2} + ${val3} x ${weight3} = ${weight1*val1 + weight2*val2 + weight3*val3}`;
+            // $("#place1").html(`${val1} x ${weight1} + ${val2} x ${weight2} + ${val3} x ${weight3} = ${weight1*val1 + weight2*val2 + weight3*val3}`);
+
+          });
+  </script>
+</html>

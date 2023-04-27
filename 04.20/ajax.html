@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <input type="button" name="" value="ajax" id="ajaxBtn">
+    <input type="button" name="" value="request1" id="requestBtn1">
+    <input type="button" name="" value="request2" id="requestBtn2">
+    <input type="button" name="" value="request3" id="requestBtn3">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $('#ajaxBtn').click(function(){
+
+      $.ajax({
+        url:'http://localhost/ajaxTest',
+        data: {},
+        success:function(data){
+          console.log(data);
+          alert(data);
+        }
+      });
+          });
+    $('#requestbtn1').click(function(){
+
+      $.ajax({
+        url:'http://localhost/request1',
+        data: {},
+        success:function(data){
+          console.log(data);
+          alert(data);
+        }
+      });
+          });
+
+    $('#requestbtn2').click(function(){
+
+      $.ajax({
+        url:'http://localhost/request2',
+        data: {},
+        success:function(data){
+          console.log(data);
+          alert(data);
+        }
+      });
+          });
+      $('#requestbtn3').click(function(){
+
+        $.ajax({
+          url:'http://localhost/request3',
+          data: {},
+          success:function(data){
+            console.log(data);
+            alert(data);
+          }
+        });
+    });
+  </script>
+</html>

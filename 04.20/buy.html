@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    Item1 - 1000
+    <br>
+    Item2 - 5000
+    <br>
+    Item3 - 10000
+    <br>
+    Item4 - 30000
+    <br>
+    Item5 - 50000
+    <br>
+    Item6 - 100000
+    <br>
+    Item7 - 500000
+    <br>
+    <input type="text" value="" id="value">
+    <input type="button" value="구입" id="buyBtn">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $('#buyBtn').click(function(){
+    let val = Number($("#value").val());
+    $.ajax({
+      url:`http://localhost/buyRes?val=${val}`,
+      data: {},
+      success:function(data){
+        console.log(data);
+      }
+    });
+  });
+  </script>
+</html>

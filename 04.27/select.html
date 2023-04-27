@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta>
+    <title></title>
+  </head>
+  <body>
+    <h3>차종</h3>
+    <select class="" name="" id="carSel">
+      <option value="items1">현대</option>
+      <option value="items2">기아</option>
+      <option value="items3">쌍용</option>
+      <option value="items4">벤츠</option>
+      <option value="items5">BMW</option>
+    </select>
+    <br>
+    <h3>색상<h3>
+    <select class="" name="" id="carCol">
+      <option value="col01">빨강</option>
+      <option value="col02">파랑</option>
+      <option value="col03">초록</option>
+      <option value="col04">노랑</option>
+      <option value="col05">검정</option>
+    <br>
+    <input type="button" value="확인" id="getCarPriceBtn">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $("#getCarPriceBtn").click(function(){
+      let carSelect = $("#carSel").val();
+      let carColSel = $("#carCol").val();
+      $.ajax({
+        url:`/getCarPrices?sels=${carSelect}&cols=${carColSel}`,
+        //첫 ? 뒤에는 &를 사용하자.
+      data:{},
+      success:function(data){
+        console.log(data);
+      }
+    })
+    })
+  </script>
+</html>
