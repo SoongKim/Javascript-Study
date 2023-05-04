@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>2번 문제</title>
+  </head>
+  <body>
+    <input type="text" name="" value="" id = 0>
+    <div id = "textArea">
+    </div>
+    <br>
+    <input type="button" name="" value="추가" id = "addOn">
+    <input type="button" name="" value="출력" id = "calc">
+    <br>
+    <br>
+    <div id="calculation"></div>
+  </body>
+  <script>
+    // id = addOn 인 버튼 클릭 시 text 칸을 추가한다.
+    let addOnBtn = document.getElementById("addOn");
+    addOnBtn.addEventListener('click', function(){
+    let input = document.createElement('input');
+    input.type = 'text';
+    input.id = 'inputCount';
+    textArea.appendChild(input);
+    textArea.innerHTML += '<br>';
+    });
+
+    // id = calcBtn 인 버튼을 클릭할 경우 합산한 값을 sum 변수에 담는다.
+    let calcBtn = document.getElementById("calc");
+    calcBtn.addEventListener('click', function(){
+    let inputs = document.querySelectorAll('input[type="text"]');
+    let sum = 0;
+    for(let i = 0; i < inputs.length; i++){
+      sum += Number(inputs[i].value);
+    }
+
+    document.getElementById("calculation").innerHTML = sum;
+    });
+  </script>
+</html>
