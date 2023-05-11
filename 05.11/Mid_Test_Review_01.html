@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    1<input type="radio" name="first" value="0"></input>
+    2<input type="radio" name="first" value="1"></input>
+    3<input type="radio" name="first" value="2"></input>
+    4<input type="radio" name="first" value="3"></input>
+    5<input type="radio" name="first" value="4"></input>
+    6<input type="radio" name="first" value="5"></input>
+    7<input type="radio" name="first" value="6"></input>
+    8<input type="radio" name="first" value="7"></input>
+    9<input type="radio" name="first" value="8"></input>
+    10<input type="radio" name="first" value="9"></input>
+    <br>
+
+    <!-- 1부터 10까지 선택하는 radio button을 삽입 -->
+    1<input type="radio" name="second" value="0"></input>
+    2<input type="radio" name="second" value="1"></input>
+    3<input type="radio" name="second" value="2"></input>
+    4<input type="radio" name="second" value="3"></input>
+    5<input type="radio" name="second" value="4"></input>
+    6<input type="radio" name="second" value="5"></input>
+    7<input type="radio" name="second" value="6"></input>
+    8<input type="radio" name="second" value="7"></input>
+    9<input type="radio" name="second" value="8"></input>
+    10<input type="radio" name="second" value="9"></input>
+    <br>
+    <!-- 1부터 10까지 선택하는 radio button을 삽입 -->
+    1<input type="radio" name="third" value="0"></input>
+    2<input type="radio" name="third" value="1"></input>
+    3<input type="radio" name="third" value="2"></input>
+    4<input type="radio" name="third" value="3"></input>
+    5<input type="radio" name="third" value="4"></input>
+    6<input type="radio" name="third" value="5"></input>
+    7<input type="radio" name="third" value="6"></input>
+    8<input type="radio" name="third" value="7"></input>
+    9<input type="radio" name="third" value="8"></input>
+    10<input type="radio" name="third" value="9"></input>
+    <br>
+    <br>
+    <!-- 계산 기능을 수행할 버튼을 삽입 -->
+    <input type="button" name="" value="calc" id="cal"></input>
+  </body>
+  <script>
+  let calBtn = document.getElementById("cal");
+  calBtn.addEventListener('click', function(){
+    let num1, num2, num3;
+    for(let i = 0; i < document.getElementsByName('first'),length; i++){
+      if(document.getElementsByName('first')[i].checked){
+        num1 = i+1;
+      }
+      if(document.getElementsByName('second')[i].checked){
+        num2 = i+1;
+      }
+      if(document.getElementsByName('third')[i].checked){
+        num3 = i+1;
+      }
+    }
+    console.log(num1, num2, num3);
+  });
+  </script>
+</html>

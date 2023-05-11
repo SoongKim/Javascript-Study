@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id= "inputArea"></div>
+    <br>
+      <input type="button" value = "추가" id="addBtn">
+      <input type="button" value = "결과" id="resultBtn">
+    <div id = "resultArea"></div>
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    let cnt = 0;
+    $('#addBtn').click(function(){
+      $("#inputArea").append(`<input type="text" id="num${cnt}"><br>`);
+      cnt++;
+    });
+
+    $("#resultBtn").click(function(){
+      let resultNum = 0;
+      for(let i = 0; i < cnt; i++){
+        resultNum += Number($(`#num${i}`).val());
+      }
+    document.getElementById("resultArea").innerHTML = resultNum;
+    });
+  </script>
+</html>

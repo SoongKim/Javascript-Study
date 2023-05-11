@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    키(m)<input type="text" name="" value="" id = "First">
+    체중(kg)<input type="text" name="" value="" id = "Second">
+    <input type="button" name="" value="계산" id = "calc">
+    <br>
+    <br>
+    <div id = "BMIAREA"></div>
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $('#calc').click(function(){
+      let num1 = Number($("#First").val());
+      let num2 = Number($("#Second").val());
+      console.log(num1, num2);
+      $.ajax({
+        url:`http://localhost/calcBMI?First=${num1}&Second=${num2}`,
+        data: {},
+        success:function(data){
+          console.log(data);
+          //document.getElementById("BMIAREA").innerHTML = data;
+          $("#BMIAREA").html(`${data}`);
+        }
+      });
+    });
+  </script>
+</html>

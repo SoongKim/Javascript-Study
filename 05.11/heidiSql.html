@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Title &nbsp <input type="text" name="" value="" id="title">
+    <br>
+    Text &nbsp <input type="text" name="" value="" id="text">
+    <br>
+    <input type="button" name="" value="입력" id="input">
+  </body>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $('#input').click(function(){
+      let titleData = String($("#title").val());
+      let textData = String($("#text").val());
+      console.log(titleData);
+      console.log(textData);
+
+      $.ajax({
+        url:`http://localhost/dbtest?title=${titleData}&text=${textData}`,
+        data: {},
+        success:function(data){
+          console.log(data);
+        }
+      });
+    });
+  </script>
+</html>

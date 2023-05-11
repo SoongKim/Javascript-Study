@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  <div id="resultArea"> </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+     $(function() {
+       $.ajax({
+         url: "http://localhost/dbcon",
+         success: function(data) {
+           for (let i = 0; i < data.length; i++) {
+             let post = data[i];
+             $("#resultArea").append(`번호 : ${post.NO} 제목 : ${post.title} 내용 : ${post.content}`)
+             $("#resultArea").append(`<button class="delete-button" data-no="${post.NO}">삭제</button><br>`);
+           }
+         }
+       });
+
+     //   $(document).on("click", ".delete-button", function() {
+     //     $.ajax({
+     //       url: `http://localhost/dbremove?targetNO=${}`,
+     //       type: "POST",
+     //       data: { targetNO: no },
+     //       success: function(data) {
+     //         console.log(data);
+     //         // 요청이 성공하면 화면에서도 해당 게시물을 제거합니다.
+     //         $(`button[data-no="${no}"]`).prev().remove(); // 내용 제거
+     //         $(`button[data-no="${no}"]`).remove(); // 삭제 버튼 제거
+     //       }
+     //     });
+     //   });
+     });
+   </script>
+</html>
