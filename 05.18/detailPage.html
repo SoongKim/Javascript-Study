@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="resultArea"></div>
+    <!-- 제목 : <span id = "title"></span>
+    <br>
+    내용 : <span id = "content"></span> -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      // $(document).ready(function() {
+        let NO = location.href.split("?")[1];
+        // var NO = getUrlParameter('NO');
+        $.ajax({
+          url: `http://localhost/detailPageS?NO=${NO}`,
+          data: {},
+          success: function(data) {
+            let post = data[0];
+            console.log(post);
+            $("#resultArea").append(`
+              <div id="post${post.NO}">
+                번호: ${post.NO} 제목: ${post.title} 내용: ${post.content} </div>`);
+            // $("#title").html(`${data[0].title}`);
+            // $("#content").html(`${data[0].content}`);
+          }
+        });
+    </script>
+  </body>
+</html>

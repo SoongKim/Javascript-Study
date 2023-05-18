@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="resultArea"></div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          url: 'http://localhost/dbinfo',
+          data: {},
+          success: function(data) {
+            for (let i = 0; i < data.length; i++) {
+              let post = data[i];
+              console.log(post);
+              $("#resultArea").append(`
+                <div id="post${post.NO}">
+                  title : ${post.title}
+                  <input type="button" value="더보기" onclick="moveToDetailPage(${post.NO})">
+                  <input type="button" value="삭제" onclick="deletePost(${post.NO})">
+                  <input type="button" value="수정" onclick="updataPage(${post.NO})">
+                </div>`);
+            }
+          }
+        });
+      });
+
+      function updatePage(NO){
+        location.href = `http://localhost/updatePage?NO=${NO}`;
+      }
+
+      function moveToDetailPage(NO) {
+        location.href = `http://localhost/detailPage?NO=${NO}`;
+      }
+
+      function deletePost(NO) {
+        $.ajax({
+          url: `http://localhost/dbremove?NO=${NO}`,
+          data: {},
+          success: function(data) {
+            console.log(data);
+            if (data.affectedRows === 1) {
+              $(`#post${NO}`).remove();
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

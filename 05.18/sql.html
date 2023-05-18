@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "resultArea"></div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $.ajax({
+    url:`http://localhost/dbinfo`,
+    data : {},
+    success:function(data){
+      for(let i = 0; i < data.length; i++){
+        let post = data[i];
+        console.log(post);
+        $("#resultArea").append(`<div id = "post${post.NO}">
+        번호 : post${post.NO} 제목 : post${post.title} 내용 : ${post.content}
+        <input type = "button" name = "" value= "삭제" onclick="deletePost(${post.NO})"></div>`);
+        // onclick= 으로 기능 연결.
+        // div 생성 간 id 부여를 통해 대상 식별을 용이하도록 설정.
+        
+      }
+    }
+  });
+
+  function deletePost(NO){
+    $.ajax({
+      url:`http://localhost/dbremove?NO=${NO}`,
+      data:{},
+      success:function(data){
+        console.log(data);
+        if(data.affectedRows == 1){
+          $(`#post${NO}`).remove();
+        }
+      }
+    });
+
+  }
+
+  </script>
+</html>
