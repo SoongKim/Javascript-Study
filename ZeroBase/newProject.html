@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>setTimeOut, setInterval, clearInterval</title>
+  </head>
+  <body>
+    <input type="text" name="" value="" id = "number">
+    <input type="button" name="" value="시작" id = "start">
+    <input type="button" name="" value="종료" id = "end"><br>
+    <div id="intervalArea"></div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    let cnt = 1;
+    let interval;
+    $('#start').click(function(){
+      let num = $("#number").val();
+      setTimeout(function(){
+        interval = setInterval(function(){
+          $("#intervalArea").append(num * cnt + "<br>");
+          cnt++;
+        }, 1000)
+      }, 3000);
+    });
+
+    $('#end').click(function(){
+      clearInterval(interval);
+    });
+  </script>
+</html>

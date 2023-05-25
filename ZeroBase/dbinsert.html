@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "resultArea">
+    tableName : post<br>
+    NO <input type="text" name="" value="" id = "NO"><br>
+    title <input type="text" name="" value="" id = "title"><br>
+    content <input type="text" name="" value="" id = "content"><br>
+    <input type="button" name="" value="입력" id = "insertBtn">
+  </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $('#insertBtn').click(function(){
+    let NO = Number($("#NO").val());
+    let title = String($("#title").val());
+    let content = Number($("#content").val());
+    console.log(NO);
+    console.log(title);
+    console.log(content);
+    $.ajax({
+      url:`http://localhost/inputData?NO=${NO}&title=${title}&content=${content}`,
+      data: {},
+      success:function(data){
+        console.log(data);
+        $("#resultArea").append(`<br>신규데이터입력완료<br>tableName:post<br>NO : ${NO} title : ${title} content : ${content}`);
+        }
+    });
+  });
+  </script>
+</html>

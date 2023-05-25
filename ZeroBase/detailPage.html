@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "infoArea"> tableName : post </div>
+    <input type="button" name="" value="뒤로가기" id = "backBtn" onclick="back()"></input>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      let NO = location.href.split("=")[1];
+      $.ajax({
+        url: `http://localhost/detailInfo?NO=${NO}`,
+        data: {},
+        success: function(data) {
+            let post = data[0];
+            console.log(post);
+            $("#infoArea").append(`
+              <table border="1" width="50px">
+              <tr>
+              <th>NO</th>
+              <th>title</th>
+              <th>content</th>
+              </tr>
+              <tr>
+              <th>${post.NO}</th>
+              <th>${post.title}</th>
+              <th>${post.content}</th>
+              </tr>
+              </table>
+              <br>
+              `);
+          }
+        });
+    });
+
+    function back(){
+      window.location.href = 'http://localhost/sql';
+    }
+
+  </script>
+</html>

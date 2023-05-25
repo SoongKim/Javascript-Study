@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Page</title>
+  </head>
+  <body>
+    <div id = "resultArea"> tableName : post<br>
+      제목 : <input type="textarea" name="" value="" id = "titleData"><br>
+      내용 : <textarea cols = "50" rows = "7" value = "" id = "textData"></textarea><br>
+      <input type="button" name="" value="수정" id = "update" onclick='update'>
+      <input type="button" name="" value="취소" id = "back" onclick="back()">
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $('#update').click(function(){
+      let titleData = String($("#titleData").val());
+      let textData = String($("#textData").val());
+      console.log(titleData);
+      console.log(textData);
+      $.ajax({
+        url:`http://localhost/dbUpdate?title=${titleData}&text=${textData}`,
+        data: {},
+        success:function(data){
+          console.log(data);
+          if(data.affectedRows === 0){
+            $("#resultArea").append(`<br>해당 title에 해당하는 데이터가 존재하지 않습니다.`);
+          }
+          else{
+            $("#resultArea").append(`<br>수정완료 content : ${titleData}`);
+          }
+        }
+      });
+    });
+
+    function back(){
+      window.location.href = 'http://localhost/sql';
+    }
+
+  </script>
+</html>

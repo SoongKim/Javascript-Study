@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="chart_div"></div>
+  </body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+      data.addColumn('number', 'Cows');
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        series: {
+          0: {curveType: 'function'}
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      let interval;
+      setTimeout(function() {
+        interval = setInterval(function() {
+          var arr = [];
+          for (let i = 1; i < 11; i++) {
+            let rand1 = Math.floor(Math.random() * 11);
+            let rand2 = Math.floor(Math.random() * 11);
+            let rand3 = Math.floor(Math.random() * 11);
+            arr.push([i, rand1, rand2, rand3]);
+          }
+          console.log(arr);
+          data = new google.visualization.DataTable();
+          data.addColumn('number', 'X');
+          data.addColumn('number', 'Dogs');
+          data.addColumn('number', 'Cats');
+          data.addColumn('number', 'Cows');
+          data.addRows(arr);
+          chart.draw(data, options);
+        }, 1000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
