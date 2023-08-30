@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>factorial</title>
+  </head>
+  <body>
+    <input type="text" name="" value="" id="text">&nbsp
+    <input type="button" name="" value="연산버튼" id='calcBtn'>
+    <br>
+    <span id="answerArea"></span>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    let calcBtn = document.getElementById('calcBtn');
+    calcBtn.addEventListener('click', function(){
+      let userNumber = Number(document.getElementById("text").value);
+      let answer = 1;
+      while(userNumber > 1){
+        answer = answer * userNumber;
+        userNumber--;
+      }
+      console.log(answer);
+      document.getElementById('answerArea').innerHTML = answer;
+    });
+  </script>
+</html>
